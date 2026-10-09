@@ -1,4 +1,4 @@
-# 🤖 AI Component Generator
+# 🤖 CodeCrafter AI
 
 An **AI-powered Frontend Component Generator** built with **React, Vite, Node.js, Express, MongoDB and the OpenRouter AI API**, designed to create customizable UI components instantly.
 This application converts **natural language prompts** into a single HTML/CSS/JS file or a full React + Vite (optionally Tailwind) project — and lets you **preview, edit, save, and export** them seamlessly.
@@ -11,29 +11,36 @@ This application converts **natural language prompts** into a single HTML/CSS/JS
 
 ### ✨ Smart Component Generation
 
-* Define your component prompt and select desired stack:
+* Describe the UI in plain English and pick a stack:
 
-  * `HTML + CSS`
-  * `HTML + Tailwind`
-  * `HTML + Bootstrap`
-  * `HTML + CSS + JS`
-  * `HTML + Tailwind + Bootstrap`
-* Generates a single HTML file or a complete, runnable React project (downloadable as ZIP).
-
-### 🧩 Live Code Editing
-
-* Integrated **Monaco Editor** for instant syntax highlighting and editing.
-* Modify, preview, and tweak generated code directly in the browser.
-
-### 🧭 Smooth UI/UX
-
-* Built with **ShadCN UI** and **React Select** for elegant user interaction.
-* Includes responsive design, gradient backgrounds, and modern UI themes.
+  * `HTML + CSS + JS`: a single self-contained HTML file
+  * `React + Vite`: a complete, runnable React project
+  * `React + Tailwind`: a React + Vite project with Tailwind CSS set up
+* One-click example prompts (pricing table, glass login card, SaaS hero, analytics dashboard, testimonial carousel).
+* Press `Ctrl + Enter` to generate, and cancel a request that is still running.
+* If a model is rate-limited or returns broken output, the next model in the chain is tried automatically.
+* Generated React projects are checked and repaired: missing boilerplate is added, the toolchain is pinned, package versions are checked against the npm registry, and one automatic AI fix pass corrects undefined variables or missing files.
 
 ### 🔄 Real-Time Preview
 
-* Sandboxed live preview with desktop / tablet / mobile widths and full-screen mode.
-* Searchable project history saved per account in MongoDB.
+* Sandboxed live preview. React projects are compiled in the browser from the real files (Sucrase + esm.sh), with no build step.
+* Desktop, tablet and mobile widths, a full-screen mode, and an option to open the preview in a new tab.
+
+### 🧩 Code Editor & Export
+
+* Built-in **Monaco Editor** with a file tree for browsing every generated file.
+* Copy code with one click, download a single HTML file or the full project as a ZIP.
+* Setup commands ready to copy (`npm install`, `npm run dev`).
+
+### 🗂️ Project History
+
+* Every generation is saved to your account in MongoDB.
+* Search saved projects, reopen them, or delete them (with a confirmation step).
+
+### 🔐 Accounts
+
+* Email/password sign-up and sign-in, with JWT sessions that are revoked on the server when you log out.
+* A landing page with a live prompt-to-component demo.
 
 ---
 
@@ -47,9 +54,11 @@ This application converts **natural language prompts** into a single HTML/CSS/JS
 
 ## 🛠️ Tech Stack
 
-**Frontend:** React 19 · Vite · React Router · Monaco Editor · JSZip · React Toastify
+**Frontend:** React 19 · Vite (Rolldown) · React Router 7 · Tailwind CSS · Monaco Editor · Sucrase · JSZip · React Icons · React Toastify
 
 **Backend:** Node.js · Express 5 · MongoDB + Mongoose · JWT · bcrypt · Helmet · express-rate-limit · PM2
+
+**AI:** OpenRouter (default models: Gemma 4 31B, Gemma 4 26B, Poolside Laguna; override with `OPENROUTER_MODELS`)
 
 ---
 
