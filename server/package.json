@@ -1,0 +1,38 @@
+{
+  "name": "codecrafter-server",
+  "version": "1.0.0",
+  "description": "Backend server for CodeCrafter AI",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/*.test.js",
+    "pm2:start": "pm2 start ecosystem.config.cjs --env production",
+    "pm2:reload": "pm2 reload ecosystem.config.cjs --env production",
+    "pm2:stop": "pm2 stop codecrafter-api",
+    "pm2:logs": "pm2 logs codecrafter-api"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.39.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.1",
+    "globals": "^17.13.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.0",
+    "semver": "^7.8.5"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.3.0",
+    "pm2": "^7.0.4",
+    "supertest": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

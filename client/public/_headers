@@ -1,0 +1,13 @@
+# Netlify response headers. Netlify serves over HTTPS and redirects HTTP automatically;
+# HSTS tells browsers to never try plain HTTP again.
+# No Content-Security-Policy here on purpose: sandboxed srcdoc previews inherit the
+# page CSP, and generated components legitimately load CDN scripts and fonts.
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
