@@ -3,8 +3,6 @@
 An **AI-powered Frontend Component Generator** built with **React, Vite, Node.js, Express, MongoDB and the OpenRouter AI API**, designed to create customizable UI components instantly.
 This application converts **natural language prompts** into a single HTML/CSS/JS file or a full React + Vite (optionally Tailwind) project — and lets you **preview, edit, save, and export** them seamlessly.
 
-[⚡ Experience the AI Component Forge!](https://codecrafterai.netlify.app/)
-
 ---
 
 ## 🚀 Features
